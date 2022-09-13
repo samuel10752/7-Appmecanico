@@ -10,7 +10,7 @@ import { DadosProdutosService } from 'src/app/services/dados-produtos.service';
 export class DetalhesProdutosPage implements OnInit {
 
   img : any = "assets/icon/aliamento.gif"
-  img_1 : any = "assets/icon/rodas.png"
+  img_1 : any = "assets/icon/roda.png"
 
   public produtoselecionado : any
 
