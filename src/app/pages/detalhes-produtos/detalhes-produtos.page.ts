@@ -9,15 +9,25 @@ import { DadosProdutosService } from 'src/app/services/dados-produtos.service';
 })
 export class DetalhesProdutosPage implements OnInit {
 
-  img : any = "assets/icon/aliamento.gif"
+  // img : any = "assets/icon/aliamento.gif"
   img_1 : any = "assets/icon/rodas.png"
 
   public produtoselecionado : any
+  public modoDeEdicao = false
+ 
 
   constructor(
     private route : ActivatedRoute,
     private produto : DadosProdutosService
   ) { }
+
+  iniciarEdicao() {
+    this.modoDeEdicao = true
+  }
+
+  encerrarEdicao() {
+    this.modoDeEdicao = false
+  }
 
   ngOnInit() {
     const id: number = Number (this.route.snapshot.paramMap.get('id'))
