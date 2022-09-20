@@ -26,12 +26,25 @@ export class DetalhesProdutosPage implements OnInit {
   }
 
   encerrarEdicao() {
-    this.modoDeEdicao = false
+    const id: number = Number (this.route.snapshot.paramMap.get('id'))
+    if (id > 0 ){
+
+      this.modoDeEdicao = false
+    } else {
+      this.produto.recebeDados(this.produtoselecionado)
+      this.modoDeEdicao = false
+    }
   }
+
 
   ngOnInit() {
     const id: number = Number (this.route.snapshot.paramMap.get('id'))
-    this.produtoselecionado = this.produto.enviardadosid(id)
+    if (id > 0 ){
+       this.produtoselecionado = this.produto.enviardadosid(id)
+    } else{
 
+    this.produtoselecionado = {id , nome: "", valor: 0.0, garantia: 0}
+    this.modoDeEdicao= true
+    }
   }
 }

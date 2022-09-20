@@ -17,26 +17,28 @@
   <ion-item *ngIf="!modoDeEdicao" >Garantia: {{produtoselecionado.garantia}} meses</ion-item>
 
   <ion-button color="dark" shape="round" *ngIf="!modoDeEdicao" (click)="iniciarEdicao()" id="button" >Alterar Dados</ion-button>
-  
+
+
+
   <form *ngIf="modoDeEdicao" (ngSubmit)="encerrarEdicao()" >
   
     <ion-item>
-      <ion-label position="floating">{{produtoselecionado.nome}}:</ion-label>
+      <ion-label position="floating">Nome{{produtoselecionado.nome}}:</ion-label>
       <ion-input [(ngModel)]="produtoselecionado.nome" name="nome"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">R$: {{produtoselecionado.valor}}:</ion-label>
+      <ion-label position="floating">R$ {{produtoselecionado.valor}}:</ion-label>
       <ion-input [(ngModel)]="produtoselecionado.valor" name="valor" ></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Garantia: {{produtoselecionado.garantia}} meses:</ion-label>
+      <ion-label position="floating">Garantia {{produtoselecionado.garantia}} meses:</ion-label>
       <ion-input [(ngModel)]="produtoselecionado.garantia" name="garantia"></ion-input>
     </ion-item>
 
-
-    <ion-button color="dark" shape="round" type="submit" id="salvar">Salvar</ion-button>
+    
+    <ion-button color="dark" shape="round" routerLink="/listagem-produtos/" type="submit" id="salvar">Salvar</ion-button>
   </form>
 
 

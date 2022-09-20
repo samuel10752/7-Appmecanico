@@ -18,8 +18,17 @@ export class DadosProdutosService {
     return this.produtos
   }
 
+  recebeDados(dadosRecebidos : any){
+    dadosRecebidos.id = this.produtos.length + 1
+    this.produtos.push(dadosRecebidos)
+  }
+
   enviardadosid(id: number) {
     const produtoselecionado = this.produtos.filter(produto => produto.id === id)
     return  produtoselecionado[0]
+  }
+
+  removeproduto(id:number){ 
+    this.produtos = this.produtos.filter(produto => produto.id !== id)
   }
 }
