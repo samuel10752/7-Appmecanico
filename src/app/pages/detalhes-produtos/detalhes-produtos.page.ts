@@ -47,4 +47,9 @@ export class DetalhesProdutosPage implements OnInit {
     this.modoDeEdicao= true
     }
   }
+ 
+  deletarServico(){
+    this.produto.deletaDados(this.produtoselecionado)
+  }
+
 }

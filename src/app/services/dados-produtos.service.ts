@@ -28,7 +28,7 @@ export class DadosProdutosService {
     return  produtoselecionado[0]
   }
 
-  removeproduto(id:number){ 
-    this.produtos = this.produtos.filter(produto => produto.id !== id)
+  deletaDados(dadosRecebidos : any){ 
+    this.produtos.splice(this.produtos.indexOf(dadosRecebidos), 1)
   }
 }

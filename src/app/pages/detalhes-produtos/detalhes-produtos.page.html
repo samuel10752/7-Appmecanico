@@ -17,7 +17,12 @@
   <ion-item *ngIf="!modoDeEdicao" >Garantia: {{produtoselecionado.garantia}} meses</ion-item>
 
   <ion-button color="dark" shape="round" *ngIf="!modoDeEdicao" (click)="iniciarEdicao()" id="button" >Alterar Dados</ion-button>
-
+  
+  <ion-fab id="icon" vertical="top" horizontal="end" slot="fixed" edge="true">
+    <ion-fab-button color="danger" (click)="deletarServico()" routerLink="/listagem-produtos/">
+      <ion-icon name="trash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 
   <form *ngIf="modoDeEdicao" (ngSubmit)="encerrarEdicao()" >
